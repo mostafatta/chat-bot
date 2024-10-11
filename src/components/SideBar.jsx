@@ -11,14 +11,14 @@ const SidebarItem = ({ icon, label, additionalClasses = '', expaned }) => {
 };
 
 const SideBar = () => {
-  const [expaned, setExpaned] = useState(true);
+  const [expaned, setExpaned] = useState(false);
 
   const toggleSideBar = () => {
     setExpaned(!expaned);
   };
 
   return (
-    <div className={`bg-gray-100 ${expaned ? 'w-60' : 'w-20'} h-screen m-0 p-0 overflow-hidden transition-all duration-300`}>
+    <div className={`bg-gray-100 ${expaned ? 'w-96' : 'w-28'} h-screen m-0 p-0 overflow-hidden transition-all duration-300`}>
       {/* top */}
       <div>
         <img 
