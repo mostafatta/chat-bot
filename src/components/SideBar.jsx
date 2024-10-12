@@ -18,12 +18,12 @@ const SideBar = () => {
   };
 
   return (
-    <div className={`bg-gray-100 ${expaned ? 'w-96' : 'w-28'} h-screen m-0 p-0 overflow-hidden transition-all duration-300`}>
+    <div className={`bg-gray-100 ${expaned ? 'w-64' : 'w-16'} h-screen transition-all duration-300`}>
       {/* top */}
       <div>
         <img 
           src={assets.menu_icon} 
-          className={`w-8 m-3 mb-4 cursor-pointer hover:bg-gray-300 rounded-full p-1 ${expaned? "":"ml-6"}`} 
+          className={`w-8 m-3 mb-4 cursor-pointer hover:bg-gray-300 rounded-full p-1 ${expaned ? "" : "ml-4"}`} 
           alt="menu" 
           onClick={toggleSideBar} 
         />
@@ -41,15 +41,13 @@ const SideBar = () => {
           )}
           {/* recent chats */}
           <div className='ml-9'>
-            {/* Hide the image when collapsed */}
-            {expaned && <SidebarItem icon={assets.message_icon} label='what is html ?' additionalClasses='mb-2' expaned={expaned}/>}
+            {expaned && <SidebarItem icon={assets.message_icon} label='what is html ?' additionalClasses='mb-2' expaned={expaned} />}
             {expaned && <SidebarItem icon={assets.message_icon} label='what is react ?' additionalClasses='mb-2' expaned={expaned} />}
           </div>
         </div>
       </div>
       {/* bottom */}
       <div className={`flex flex-col m-3 gap-2 ${expaned ? 'mt-36' : 'mt-72'}`}>
-        {/* These items will keep showing regardless of sidebar state */}
         <SidebarItem icon={assets.question_icon} label='Help' expaned={expaned} />
         <SidebarItem icon={assets.history_icon} label='History' expaned={expaned} />
         <SidebarItem icon={assets.setting_icon} label='Settings' expaned={expaned} />
